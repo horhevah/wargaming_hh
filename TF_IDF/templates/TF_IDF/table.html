@@ -1,0 +1,21 @@
+{% extends 'layout/basic.html' %}
+
+{% block title %} TABLE {% endblock %}
+
+
+{% block content %}
+    <table class = "table">
+        <tr>
+            <th>word</th>
+            <th>tf</th>
+            <th>idf</th>
+        </tr>
+        {% for word in words %}
+        <tr>
+            <td>{{word.word}}</td>
+            <td>{{word.tf}}</td>
+            <td>{{word.idf}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

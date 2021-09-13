@@ -34,7 +34,7 @@ def handle_uploaded_file(upload_file):
     file_instance = create_new_file(upload_file)
     create_new_words(upload_file,file_instance)
     query = Words.objects.filter(file=file_instance).order_by('-idf').values('word', 'tf', 'idf' )
-    return query
+    return query[0:50]
 
 def create_new_words(upload_file,file_instance):
     # file_id = create_new_file(f)

@@ -6,12 +6,14 @@
 {% block content %}
     <table class = "table">
         <tr>
+            <th>#</th>
             <th>word</th>
             <th>tf</th>
             <th>idf</th>
         </tr>
         {% for word in words %}
         <tr>
+            <td>{{ forloop.counter }} </td>
             <td>{{word.word}}</td>
             <td>{{word.tf}}</td>
             <td>{{word.idf}}</td>
